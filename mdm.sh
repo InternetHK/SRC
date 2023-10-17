@@ -24,13 +24,13 @@ select opt in "${options[@]}"; do
 		fi
 		echo -e "${GRN}Create a new user / Tạo User mới"
         echo -e "${BLU}Press Enter to continue, Note: Leaving it blank will default to the automatic user / Nhấn Enter để tiếp tục, Lưu ý: có thể không điền sẽ tự động nhận User mặc định"
-  		echo -e "Enter the username (Default: Apple) / Nhập tên User (Mặc định: Apple)"
+  		echo -e "Enter the username (Default: Apple) "
 		read realName
   		realName="${realName:= Apple}"
-    	echo -e "${BLUE}Nhận username ${RED}WRITE WITHOUT SPACES / VIẾT LIỀN KHÔNG DẤU ${GRN} (Mặc định: Apple)"
+    	echo -e "${BLUE}Nhận username ${RED}WRITE WITHOUT SPACES / ${GRN} (defualt: Apple)"
       	read username
 		username="${username:=Apple}"
-  		echo -e "${BLUE}Enter the password (default: 1234) / Nhập mật khẩu (mặc định: 1234)"
+  		echo -e "${BLUE}Enter the password (default: 1234) /"
     	read passw
       	passw="${passw:=1234}"
 		dscl_path='/Volumes/Data/private/var/db/dslocal/nodes/Default' 
@@ -56,7 +56,7 @@ select opt in "${options[@]}"; do
 	rm -rf /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound
 	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled
 	touch /Volumes/Macintosh\ HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound
-	echo -e "${CYAN}------ Autobypass SUCCESSFULLY / Autobypass HOÀN TẤT ------${NC}"
+	echo -e "${CYAN}------ Autobypass SUCCESSFULLY / Autobypass ------${NC}"
 	echo -e "${CYAN}------ Exit Terminal , Reset Macbook and ENJOY ! ------${NC}"
 		break
 		;;
