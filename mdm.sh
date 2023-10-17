@@ -10,7 +10,7 @@ NC='\033[0m'
 echo -e "${CYAN}*-------------------*---------------------*${NC}"
 echo -e "${YEL}* Check MDM - Skip MDM Auto for MacOS by *${NC}"
 echo -e "${RED}*             SKIPMDM.COM                *${NC}"
-echo -e "${RED}*            Phoenix Team                *${NC}"
+echo -e "${RED}*               no team                *${NC}"
 echo -e "${CYAN}*-------------------*---------------------*${NC}"
 echo ""
 PS3='Please enter your choice: '
