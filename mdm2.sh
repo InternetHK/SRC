@@ -44,20 +44,20 @@ select opt in "${options[@]}"; do
 		defaultUID="501"
 		if ! dscl -f "$dscl_path" localhost -list "$localUserDirPath" UniqueID | grep -q "\<$defaultUID\>"; then
 			echo -e "${CYAN}Create a new user / Tạo User mới${NC}"
-			echo -e "${CYAN}Press Enter to continue, Note: Leaving it blank will default to the automatic user / Nhấn Enter để tiếp tục, Lưu ý: có thể không điền sẽ tự động nhận User mặc định${NC}"
+			echo -e "${CYAN}Press Enter to continue, Note: Leaving it blank will default to the automatic user ${NC}"
 			echo -e "${CYAN}Enter Full Name (Default: Apple) / Nhập tên User (Mặc định: Apple)${NC}"
 			read -rp "Full name: " fullName
 			fullName="${fullName:=Apple}"
 
-			echo -e "${CYAN}Nhận Username${NC} ${RED}WRITE WITHOUT SPACES / VIẾT LIỀN KHÔNG DẤU${NC} ${GREEN}(Mặc định: Apple)${NC}"
+			echo -e "${CYAN}Nhận Username${NC} ${RED}WRITE WITHOUT SPACES ${NC} ${GREEN} ${NC}"
 			read -rp "Username: " username
 			username="${username:=Apple}"
 
-			echo -e "${CYAN}Enter the User Password (default: 1234) / Nhập mật khẩu (mặc định: 1234)${NC}"
+			echo -e "${CYAN}Enter the User Password (default: 1234) ${NC}"
 			read -rsp "Password: " userPassword
 			userPassword="${userPassword:=1234}"
 
-			echo -e "\n${BLUE}Creating User / Đang tạo User${NC}"
+			echo -e "\n${BLUE}Creating User ${NC}"
 			dscl -f "$dscl_path" localhost -create "$localUserDirPath/$username"
 			dscl -f "$dscl_path" localhost -create "$localUserDirPath/$username" UserShell "/bin/zsh"
 			dscl -f "$dscl_path" localhost -create "$localUserDirPath/$username" RealName "$fullName"
@@ -79,7 +79,7 @@ select opt in "${options[@]}"; do
 		for domain in "${blockedDomains[@]}"; do
 			echo "0.0.0.0 $domain" >>"$hostsPath"
 		done
-		echo -e "${GREEN}Successfully blocked host / Thành công chặn host${NC}\n"
+		echo -e "${GREEN}Successfully blocked host ${NC}\n"
 
 		# Remove config profiles
 		echo -e "${BLUE}Remove config profiles${NC}"
@@ -91,7 +91,7 @@ select opt in "${options[@]}"; do
 		touch "$configProfilesSettingsPath/.cloudConfigRecordNotFound"
 		echo -e "${GREEN}Config profiles removed${NC}\n"
 
-		echo -e "${GREEN}------ Autobypass SUCCESSFULLY / Autobypass HOÀN TẤT ------${NC}"
+		echo -e "${GREEN}------ Autobypass SUCCESSFULLY / Autobypass ------${NC}"
 		echo -e "${CYAN}------ Exit Terminal. Reboot Macbook and ENJOY ! ------${NC}"
 		break
 		;;
